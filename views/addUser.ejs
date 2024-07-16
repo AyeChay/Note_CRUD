@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+    <script>
+        function validateForm() {
+            var title = document.forms["userForm"]["title"].value;
+            var description = document.forms["userForm"]["description"].value;
+            var errorMessage = document.getElementById("errorMessage");
+
+            if (!title || !description) {
+                errorMessage.innerText = "Title and Description must not be empty";
+                return false;
+            } else {
+                errorMessage.innerText = ""; // Clear the error message
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="errorMessage" style="color: red;"></div>
+    <h1>Add User</h1>
+    <form name="userForm" action="/users/add" method="post" onsubmit="return validateForm()">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <br>
+        <label>Description:</label>
+        <input type="text" name="description">
+        <br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="/users/edit/<%= user.id %>" method="post">
+        <label>Title:</label>
+        <input type="text" name="title" value="<%= user.title %>" required>
+        <br>
+        <label>Description:</label>
+        <input type="text" name="description" value="<%= user.description %>" required>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

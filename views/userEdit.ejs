@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <a href="/users/add">Add User</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        <% users.forEach(function(user) { %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.title %></td>
+            <td><%= user.description %></td>
+            <td>
+                <a href="/users/edit/<%= user.id %>">Edit</a>
+                <a href="/users/delete/<%= user.id %>">Delete</a>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
+
